@@ -31,8 +31,7 @@ kill -9 $(lsof -t -i :5002) || true
 
 # 🚀 Start app with Gunicorn from .venv
 GUNICORN_PATH="./.venv/bin/gunicorn"
-pm2 start "$GUNICORN_PATH -b 0.0.0.0:5002 app:app --timeout 180 --workers 2" \
-  --name "scoutjar-semantic-mvp0.1" --time
+pm2 start "$GUNICORN_PATH -b 0.0.0.0:5002 app:app --timeout 180 --workers 2" --name "scoutjar-semantic-mvp0.1" --time
 
 # 💾 Save PM2 process list
 pm2 save
